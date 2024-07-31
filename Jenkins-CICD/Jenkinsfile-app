@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/RajinikanthVadla/Tetris-V1.git'
+                git branch: 'main', url: 'https://github.com/mrmukesh77/Tetris-V1.git'
             }
         }
         // stage("Sonarqube Analysis "){
@@ -54,8 +54,8 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                        sh "docker build -t tetrisv1 ."
-                       sh "docker tag tetrisv1 aiworklabs/workshop:latest "
-                       sh "docker push aiworklabs/workshop:latest "
+                       sh "docker tag tetrisv1 mrmukesh77/workshop:latest "
+                       sh "docker push mrmukesh77/workshop:latest "
                     }
                 }
             }
